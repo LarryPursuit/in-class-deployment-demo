@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  console.log(process.env);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Simple React App
+      <div>Current Env: {process.env.NODE_ENV}</div>
+      <div>
+        Current API{" "}
+        {process.env.NODE_ENV === "development"
+          ? process.env.REACT_APP_DEVELOPMENT_API_KEY
+          : process.env.REACT_APP_PRODUCTION}
+      </div>
     </div>
   );
 }
